@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: MAIilignment # Changed from "blank" to your lab name
+title: mAI alignment lab # Changed from "MAIilignment" to your new lab name
 first_name: Florian
 middle_name: 
 last_name: Mai
@@ -119,8 +119,8 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: MAIilignment Safety Reading Group
-blog_nav_title: Safety Reading Group # This changes the navigation title
+blog_name: mAI alignment lab Safety Reading Group
+blog_nav_title: safety reading group # This changes the navigation title
 blog_description: A reading group focused on AI alignment and safety research
 permalink: /blog/:year/:title/
 
@@ -266,8 +266,8 @@ display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will
 
 scholar:
 
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Mai]
+  first_name: [Florian, F.]
 
   style: apa
   locale: en

@@ -19,7 +19,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Welcome to MAIilignment, a Junior Research Group at the University of Bonn led by Florian Mai.
+Welcome to the mAI alignment lab, a Junior Research Group at the University of Bonn led by Florian Mai.
 
 Our research focuses on AI alignment and safety issues, exploring how to ensure that current and future advanced AI systems are beneficial and safe for humanity.
 
