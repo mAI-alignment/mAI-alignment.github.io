@@ -6,12 +6,13 @@ subtitle: Junior Research Group at University of Bonn focusing on AI alignment a
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: team/fm.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>Your office number</p>
-    <p>University of Bonn</p>
+    <p>Office 2.107</p>
+    <p>Friedrich-Hirzebruch-Allee 6</p>
     <p>Bonn, Germany</p>
+    <p>fmai@uni-bonn.de</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
@@ -36,4 +37,4 @@ Our research focuses on AI alignment and safety issues, exploring how to ensure 
 
 ## Join Us
 
-[Information about opportunities to join or collaborate with your group]
+We currently have no open positions available. However, if you are interested in collaborating with our research group, please feel free to send an email to Dr. Florian Mai at fmai@uni-bonn.de.

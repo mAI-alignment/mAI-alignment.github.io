@@ -2,11 +2,27 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Teaching activities and student supervision at the mAI alignment lab
 nav: true
 nav_order: 5
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+# Teaching
 
-Organize your courses by years, topics, or universities, however you like!
+## Courses
+
+*Currently no courses are being taught. Information about future courses will be posted here.*
+
+---
+
+## Theses
+
+We supervise students working on thesis projects related to AI alignment and safety.
+
+### Open Thesis Topics
+
+*Currently no thesis topics are advertised. Please contact Dr. Florian Mai (fmai@uni-bonn.de) if you are interested in writing a thesis in the area of AI alignment and safety.*
+
+### Finished Theses
+
+*No theses have been completed yet. This section will be updated as students complete their work.*
