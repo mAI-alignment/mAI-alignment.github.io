@@ -18,6 +18,9 @@ nav_order: 2
   
   <h3>{{ member.name }}</h3>
   <p><strong>{{ member.position }}</strong></p>
+  {% if member.office %}
+  <p><em>{{ member.office }}</em></p>
+  {% endif %}
   
   <p>
     {% if member.email %}
@@ -47,5 +50,4 @@ nav_order: 2
 
 ## Affiliations
 
-- **[CAISA Lab](https://caisa-lab.github.io/)** - Center for AI Safety and Alignment
-- **[The Lamarr Institute](https://lamarr-institute.org/)** - Machine Learning and Artificial Intelligence 
+- **[CAISA Lab](https://caisa-lab.github.io/)** - Conversational AI and Social Analytics (CAISA) Lab

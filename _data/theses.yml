@@ -1,0 +1,39 @@
+# Example thesis structures for different categories
+
+# Open thesis topics (assigned_student: null)
+# - title: "Value Alignment in Large Language Models"
+#   description: "Investigate methods for ensuring LLMs behave according to human values and preferences."
+#   type: "Master's"
+#   assigned_student: null
+#   supervisor: "Dr. Florian Mai"
+#   image: "theses/value_alignment.jpg"
+#   keywords: ["AI alignment", "LLMs", "value learning"]
+#   finished: false
+#   proposed_date: "2025-01-15"
+
+# Ongoing thesis topics (assigned_student: not null, finished: false)
+# - title: "Safety Evaluation of Web-Based AI Agents"
+#   description: "Develop evaluation frameworks for assessing the safety of AI agents operating in web environments."
+#   type: "Master's"
+#   assigned_student: "Jane Doe"
+#   supervisor: "Dr. Florian Mai"
+#   image: "theses/web_agents_safety.jpg"
+#   keywords: ["AI safety", "web agents", "evaluation"]
+#   start_date: "2025-01-10"
+#   expected_completion: "2025-07-10"
+#   finished: false
+
+# Finished theses (finished: true)
+# - title: "Interpretability Methods for AI Safety"
+#   description: "A comprehensive study of interpretability techniques for ensuring AI system transparency."
+#   type: "Master's"
+#   assigned_student: "John Smith"
+#   supervisor: "Dr. Florian Mai"
+#   image: "theses/interpretability.jpg"
+#   keywords: ["interpretability", "AI safety", "explainable AI"]
+#   start_date: "2024-02-01"
+#   completion_date: "2024-08-15"
+#   finished: true
+#   grade: "1.0"
+
+# To add a thesis, uncomment and modify one of the structures above 

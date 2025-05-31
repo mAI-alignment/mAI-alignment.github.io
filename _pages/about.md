@@ -6,19 +6,18 @@ subtitle: Junior Research Group at University of Bonn focusing on AI alignment a
 
 profile:
   align: right
-  image: team/fm.jpg
+  image: 
   image_circular: false # crops the image to make it circular
-  address: >
-    <p>Office 2.107</p>
-    <p>Friedrich-Hirzebruch-Allee 6</p>
-    <p>Bonn, Germany</p>
-    <p>fmai@uni-bonn.de</p>
+  address: 
+  email: fmai@uni-bonn.de
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
+
+## About
 
 Welcome to the mAI alignment lab, a Junior Research Group at the University of Bonn led by Florian Mai.
 

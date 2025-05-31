@@ -1,0 +1,63 @@
+# Example course structure - currently no courses are being taught
+# - title: "Introduction to AI Safety"
+#   description: "This course covers fundamental concepts in AI safety, including alignment problems, value learning, and safe AI development practices."
+#   type: "Lecture"
+#   year: 2025
+#   semester: "Summer"
+#   ects: 6
+#   image: "courses/ai_safety_intro.jpg"
+#   learning_outcomes:
+#     - "Understand key challenges in AI alignment"
+#     - "Analyze safety implications of AI systems"
+#     - "Design safer AI architectures"
+#   prerequisites: "Basic knowledge of machine learning"
+
+# To add a course, uncomment and modify the structure above 
+
+- title: "Large Language Models"
+  description: "A comprehensive seminar exploring cutting-edge research in large language models, covering architectures, training methods, capabilities, and applications. Students engage with recent research papers and present findings on topics including model scaling, alignment, reasoning, and societal impacts."
+  type: "Seminar"
+  course_code: "MA-INF 4332"
+  year: 2024
+  semester: "Winter"
+  ects: 4
+  image: "courses/llm_seminar.jpg"
+  learning_outcomes:
+    - "Understand state-of-the-art LLM architectures and training methods"
+    - "Analyze recent research developments in the field"
+    - "Evaluate capabilities and limitations of current models"
+    - "Assess societal and ethical implications of LLMs"
+  prerequisites: "Basic knowledge of machine learning and natural language processing"
+  instructors: ["Dr. Florian Mai", "Prof. Dr. Lucie Flek"]
+
+- title: "AI Ethics"
+  description: "A seminar introducing students to ethical dilemmas of artificial intelligence, covering AGI basics, alignment and value specification, control and autonomy, systemic risks, and policy governance. Students develop skills in assessing AI systems and reasoning through ethical issues."
+  type: "Seminar"
+  course_code: "MA-INF 4116"
+  year: 2025
+  semester: "Summer"
+  ects: 4
+  image: "courses/ai_ethics.jpg"
+  learning_outcomes:
+    - "Assess AI systems and identify ethical dilemmas"
+    - "Understand alignment and value specification challenges"
+    - "Analyze systemic risks from advanced AI"
+    - "Evaluate policy approaches for AI governance"
+  prerequisites: "Basic computer science background; ML/robotics experience helpful but not required"
+  instructors: ["Prof. Dr. Lucie Flek", "Dr. Florian Mai", "Vahid Sadiri Javadi"]
+  schedule: "Wednesday 2:15-3:45 PM, Room B-IT 2.113"
+
+- title: "AI Alignment"
+  description: "An advanced seminar focusing on the technical and philosophical challenges of aligning AI systems with human values and intentions. Topics include value learning, reward modeling, interpretability, and scalable oversight methods."
+  type: "Seminar"
+  year: 2025
+  semester: "Winter"
+  ects: 4
+  image: "courses/ai_alignment.jpg"
+  learning_outcomes:
+    - "Understand core challenges in AI alignment"
+    - "Analyze technical approaches to value alignment"
+    - "Evaluate scalable oversight methodologies"
+    - "Design alignment-focused AI architectures"
+  prerequisites: "Strong background in machine learning and AI safety concepts"
+  instructors: ["Dr. Florian Mai"] 

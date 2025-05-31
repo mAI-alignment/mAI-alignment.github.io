@@ -2,6 +2,7 @@
 layout: page
 name: Dr. Florian Mai
 position: Junior Research Group Leader
+office: "Office 2.107, Friedrich-Hirzebruch-Allee 6, Bonn, Germany"
 email: fmai@uni-bonn.de
 website: https://florianmai.github.io
 google_scholar: https://scholar.google.com/citations?user=your_id
