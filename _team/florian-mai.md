@@ -12,13 +12,11 @@ profile_pic: team/fm.jpg
 order: 1
 ---
 
-Dr. Florian Mai leads the mAI alignment lab, focusing on AI alignment and safety research. His work spans value alignment, AI ethics, and the development of safe AI systems.
+Dr. Florian Mai leads the mAI alignment lab, focusing on AI alignment and safety research. His work spans value alignment, reasoning models, and the development of safe large scale AI systems.
 
 **Research Interests:**
 - AI Alignment and Safety
 - Value Learning and Preference Modeling
-- AI Ethics and Responsible AI
-- Machine Learning Theory
-
-**Background:**
-Dr. Mai brings extensive experience in machine learning and AI safety research, with a particular focus on ensuring AI systems behave in accordance with human values and intentions. 
+- Reasoning models
+- Self-supervised learning
+- LLM training

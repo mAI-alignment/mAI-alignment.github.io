@@ -19,20 +19,23 @@ social: true  # includes social icons at the bottom of the page
 
 ## About
 
-Welcome to the mAI alignment lab, a Junior Research Group at the University of Bonn led by Florian Mai.
+Welcome to the mAI alignment lab, a Junior Research Group at the University of Bonn led by Dr. Florian Mai.
 
-Our research focuses on AI alignment and safety issues, exploring how to ensure that current and future advanced AI systems are beneficial and safe for humanity.
+Our research focuses on AI alignment and safety issues, exploring how to ensure that current and future advanced AI systems are acting reliably in accordance with human values.
 
-## Research Focus
+## Research Interests
 
+- Scalable Oversight
 - Value alignment
-- Scalable oversight
-- Reasoning and planning approaches for LLMs
-- AI safety and ethics
+- Emergent misalignment
+- Planning
+- LLM training
 
 ## Current Projects
 
-[More details about your current projects]
+- **[Scalable Oversight by Learning to Decompose Tasks](/projects/superalignment-task-decomposition/)**: Exploring how AI systems can learn to break complex tasks into manageable subtasks for reliable human oversight, advancing the frontier of superalignment research.
+
+- **[Learning to Plan from Unlabeled Data](/projects/learning-to-plan/)**: Developing planning capabilities for language models through self-supervised learning.
 
 ## Join Us
 

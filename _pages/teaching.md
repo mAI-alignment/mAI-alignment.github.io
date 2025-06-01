@@ -13,13 +13,14 @@ nav_order: 6
 {% if courses and courses.size > 0 %}
   {% assign courses_by_year = courses | group_by: 'year' | sort: 'name' | reverse %}
   {% for year_group in courses_by_year %}
-  ### {{ year_group.name }}
+  {% assign first_course = year_group.items.first %}
+  <h3>{{ first_course.semester }} Semester {{ year_group.name }}</h3>
   <div class="courses-container">
     {% for course in year_group.items %}
     <div class="course-item" style="margin-bottom: 2rem; padding: 1rem; border: 1px solid #ddd; border-radius: 8px;">
       {% if course.image %}
       <div style="float: left; margin-right: 1rem; margin-bottom: 1rem;">
-        <img src="{{ '/assets/img/' | append: course.image | relative_url }}" alt="{{ course.title }}" style="width: 150px; height: 100px; object-fit: cover; border-radius: 4px;">
+        <img src="{{ '/assets/img/' | append: course.image | relative_url }}" alt="{{ course.title }}" style="width: 150px; max-height: 150px; object-fit: contain; border-radius: 4px; border: 1px solid #eee;">
       </div>
       {% endif %}
       
