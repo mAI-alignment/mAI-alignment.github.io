@@ -24,7 +24,7 @@ If you like the theme, give it a star!
 ## User community
 
 The vibrant community of **al-folio** users is growing!
-Aca demics around the world use this theme for their homepages, blogs, lab pages, as well as webpages for courses, workshops, conferences, meetups, and more.
+Aca  demi cs around the world use this theme for their homepages, blogs, lab pages, as well as webpages for courses, workshops, conferences, meetups, and more.
 Check out the community webpages below.
 Feel free to add your own page(s) by sending a PR.
 
