@@ -30,6 +30,34 @@
   abbr={BiAlign}
 }
 
+@misc{kaczer2025intraining,
+  title={In-Training Defenses against Emergent Misalignment in Language Models},
+  author={David Kacz{\'e}r and Magnus J{\o}rgenv{\aa}g and Clemens Vetter and Lucie Flek and Florian Mai},
+  year={2025},
+  eprint={2508.06249},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  abstract={Fine-tuning lets practitioners repurpose aligned large language models (LLMs) for new domains, yet recent work reveals emergent misalignment (EMA): Even a small, domain-specific fine-tune can induce harmful behaviors far outside the target domain. Even in the case where model weights are hidden behind a fine-tuning API, this gives attackers inadvertent access to a broadly misaligned model in a way that can be hard to detect from the fine-tuning data alone. We present the first systematic study of in-training safeguards against EMA that are practical for providers who expose fine-tuning via an API. We investigate four training regularization interventions: (i) KL-divergence regularization toward a safe reference model, (ii) $\ell_2$ distance in feature space, (iii) projecting onto a safe subspace (SafeLoRA), and (iv) interleaving of a small amount of safe training examples from a general instruct-tuning dataset. We first evaluate the methods' emergent misalignment effect across four malicious, EMA-inducing tasks. Second, we assess the methods' impacts on benign tasks. We conclude with a discussion of open questions in emergent misalignment research.},
+  url={https://arxiv.org/abs/2508.06249},
+  bibtex_show={true},
+  selected={false},
+  abbr={arXiv},
+}
+
+@misc{nie2025surveybehavior,
+  title={Survey-to-Behavior: Downstream Alignment of Human Values in LLMs via Survey Questions},
+  author={Shangrui Nie and Florian Mai and David Kacz{\'e}r and Charles Welch and Zhixue Zhao and Lucie Flek},
+  year={2025},
+  eprint={2508.11414},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  abstract={Large language models implicitly encode preferences over human values, yet steering them often requires large training data. In this work, we investigate a simple approach: Can we reliably modify a model's value system in downstream behavior by training it to answer value survey questions accordingly? We first construct value profiles of several open-source LLMs by asking them to rate a series of value-related descriptions spanning 20 distinct human values, which we use as a baseline for subsequent experiments. We then investigate whether the value system of a model can be governed by fine-tuning on the value surveys. We evaluate the effect of finetuning on the model's behavior in two ways; first, we assess how answers change on in-domain, held-out survey questions. Second, we evaluate whether the model's behavior changes in out-of-domain settings (situational scenarios). To this end, we construct a contextualized moral judgment dataset based on Reddit posts and evaluate changes in the model's behavior in text-based adventure games. We demonstrate that our simple approach can not only change the model's answers to in-domain survey questions, but also produces substantial shifts (value alignment) in implicit downstream task behavior.},
+  url={https://arxiv.org/abs/2508.11414},
+  bibtex_show={true},
+  selected={false},
+  abbr={arXiv},
+}
+
 @inproceedings{cornille2024learning,
   title={Learning to Plan for Language Modeling from Unlabeled Data},
   author={Nathan Cornille and Marie-Francine Moens and Florian Mai},
