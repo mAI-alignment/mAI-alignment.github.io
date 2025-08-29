@@ -4,7 +4,7 @@ title: Learning to Plan from Unlabeled Data
 description: how do we train architectures for planning without labeled data?
 img: assets/img/projects/learning-to-plan.png
 importance: 2
-category: ongoing
+category: completed
 ---
 
 ### Synopsis

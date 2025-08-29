@@ -2,7 +2,7 @@
 layout: page
 title: Value Alignment
 description: how do we make language models follow specified human value profiles?
-img: assets/img/projects/value-alignment.png
+img: assets/img/projects/value_alignment.png
 importance: 3
 category: ongoing
 ---

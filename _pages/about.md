@@ -28,14 +28,16 @@ Our research focuses on AI alignment and safety issues, exploring how to ensure 
 - Scalable Oversight
 - Value alignment
 - Emergent misalignment
-- Planning
+- Reasoning Models
 - LLM training
 
 ## Current Projects
 
 - **[Scalable Oversight by Learning to Decompose Tasks](/projects/superalignment-task-decomposition/)**: Exploring how AI systems can learn to break complex tasks into manageable subtasks for reliable human oversight, advancing the frontier of superalignment research.
 
-- **[Learning to Plan from Unlabeled Data](/projects/learning-to-plan/)**: Developing planning capabilities for language models through self-supervised learning.
+- **[Emergent Misalignment](/projects/emergent-misalignment/)**: Investigating how narrow finetuning can produce broadly misaligned language models and developing methods to prevent such misalignment.
+
+- **[Value Alignment](/projects/value-alignment/)**: Researching methods to ensure AI systems align with human values and preferences.
 
 ## Join Us
 
