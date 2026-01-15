@@ -52,7 +52,7 @@
   type: "Seminar & Lab"
   year: 2025/2026
   semester: "Winter"
-  ects: 4
+  ects: 9
   image: "courses/alignment-course.png"
   learning_outcomes:
     - "Understand state-of-the-art AI alignment techniques"
