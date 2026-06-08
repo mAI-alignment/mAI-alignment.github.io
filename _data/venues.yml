@@ -4,3 +4,10 @@
 
 "PhysRev":
   url: https://journals.aps.org/
+"arXiv":
+  url: https://arxiv.org/
+  color: "#b31b1b"
+
+"AITJ":
+  url: https://aitj.org/
+  color: "#0c446b"

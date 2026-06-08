@@ -1,6 +1,88 @@
 ---
 ---
 
+@misc{jorgenvag2026rlamplifies,
+  title={Reinforcement Learning Amplifies Emergent Misalignment from Harmless Rewards},
+  author={Magnus J{\o}rgenv{\aa}g and David Kacz{\'e}r and Lasse Ruttert and Marvin G{\"u}lhan and Lucie Flek and Florian Mai},
+  year={2026},
+  eprint={2605.31328},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  abstract={Emergent misalignment (EM) is the surprising tendency of language models to become broadly misaligned after fine-tuning on narrowly misaligned examples. While EM has been extensively studied in the supervised fine-tuning (SFT) setting, evidence that it also arises from reinforcement learning (RL) is limited to large, closed-source models, leaving the phenomenon expensive to study and difficult to reproduce. We characterize EM from RL in small, off-the-shelf open-weight models along three axes. First, we show that rewarding narrow, overtly misaligned behavior produces substantially higher general-domain misalignment than sample-matched SFT. Second, we show that EM from RL can be induced by reward signals that could plausibly arise naturally, such as unpopular aesthetic preferences or poor rhetorical appeals. Third, we evaluate in-training mitigations developed for SFT-induced EM and find that they broadly transfer, with interleaving on-policy safety data performing best.},
+  url={https://arxiv.org/abs/2605.31328},
+  bibtex_show={true},
+  selected={false},
+  abbr={arXiv}
+}
+
+@misc{rawat2026reasoningprimitives,
+  title={Reasoning Primitives in Hybrid and Non-Hybrid {LLMs}: Do Architectural Differences Yield Advantages in State-Tracking and Recall?},
+  author={Shivam Rawat and Lucie Flek and Florian Mai and Nicholas Kluge Corr{\^e}a},
+  year={2026},
+  eprint={2604.21454},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  abstract={Reasoning in large language models is often discussed as a single capability, but some of its gains may stem from simpler underlying operations. We examine two such primitives, recall and state-tracking, through five controlled task families centered on state-based recall, and compare matched transformer and hybrid architectures with and without reasoning augmentation. Across the suite, reasoning-augmented variants substantially outperform instruction-only variants, often by large margins. This pattern is consistent with the State over Tokens view: externalized reasoning traces help because they carry the intermediate state forward in token space. By contrast, hybrid inductive bias does not yield a uniform advantage in accuracy once reasoning tokens are available. When architectural differences do appear, they follow task structure: the hybrid Think model is more robust on strictly sequential chained updates, whereas the transformer Think model is more robust on flat multi-hop retrieval. We therefore cast the main contribution of this study as a descriptive account of what drives performance on state-based recall tasks: reasoning-token augmentation appears to be the dominant factor, while hybrid advantages are narrower, task-dependent, and potentially more about inference efficiency than overall capability. We also release the codebase and data required to reproduce these results.},
+  url={https://arxiv.org/abs/2604.21454},
+  bibtex_show={true},
+  selected={false},
+  abbr={arXiv}
+}
+
+@misc{fatimah2026lilmoo,
+  title={Raising Bars, Not Parameters: {LilMoo} Compact Language Model for {Hindi}},
+  author={Shiza Fatimah and Aniket Sen and Sophia Falk and Florian Mai and Lucie Flek and Nicholas Kluge Corr{\^e}a},
+  year={2026},
+  eprint={2603.03508},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  abstract={The dominance of large multilingual foundation models has widened linguistic inequalities in Natural Language Processing (NLP), often leaving low-resource languages underrepresented. This paper introduces LilMoo, a 0.6-billion-parameter Hindi language model trained entirely from scratch to address this gap. Unlike prior Hindi models that rely on continual pretraining from opaque multilingual foundations, LilMoo is developed through a fully transparent and reproducible pipeline optimized for limited compute environments. We construct a high-quality Hindi corpus (GigaLekh) filtered through both heuristic and learned (LLM-as-a-judge) methods, complemented by bilingual augmentation with curated English data. Using this dataset, we explore various training recipes for small-scale language models. Across comprehensive evaluation suites, LilMoo consistently outperforms comparably sized multilingual baselines such as Qwen2.5-0.5B and Qwen3-0.6B, demonstrating that well-designed language-specific pretraining can rival large multilingual models at the sub-billion-parameter range.},
+  url={https://arxiv.org/abs/2603.03508},
+  bibtex_show={true},
+  selected={false},
+  abbr={arXiv}
+}
+
+@misc{nickel2026artificialtom,
+  title={Understanding Artificial Theory of Mind: Perturbed Tasks and Reasoning in Large Language Models},
+  author={Christian Nickel and Laura Schrewe and Florian Mai and Lucie Flek},
+  year={2026},
+  eprint={2602.22072},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  abstract={Theory of Mind (ToM) refers to an agent's ability to model the internal states of others. Contributing to the debate whether large language models (LLMs) exhibit genuine ToM capabilities, our study investigates their ToM robustness using perturbations on false-belief tasks and examines the potential of Chain-of-Thought prompting (CoT) to enhance performance and explain the LLM's decision. We introduce a handcrafted, richly annotated ToM dataset, including classic and perturbed false belief tasks, the corresponding spaces of valid reasoning chains for correct task completion, subsequent reasoning faithfulness, task solutions, and propose metrics to evaluate reasoning chain correctness and to what extent final answers are faithful to reasoning traces of the generated CoT. We show a steep drop in ToM capabilities under task perturbation for all evaluated LLMs, questioning the notion of any robust form of ToM being present. While CoT prompting improves the ToM performance overall in a faithful manner, it surprisingly degrades accuracy for some perturbation classes, indicating that selective application is necessary.},
+  url={https://arxiv.org/abs/2602.22072},
+  bibtex_show={true},
+  selected={false},
+  abbr={arXiv}
+}
+
+@misc{haselhorst2026activationmatched,
+  title={Detecting Hidden Behaviors in {LLMs} via Activation-matched Finetuning},
+  author={Robin Haselhorst and Lucie Flek and Florian Mai},
+  year={2026},
+  abstract={Large language models can hide hidden behaviors that activate only under narrow conditions, such as backdoor triggers, sleeper-agent deployment cues, sandbagging, or topic-conditioned censorship. Such behaviors are difficult to detect without prior knowledge what to look for. We present activation-matched finetuning, an unsupervised detection method that assumes no knowledge of the trigger or the target behavior. Given a suspect model and a publicly available anchor, we finetune the anchor to reproduce the suspect's activations on a small benign corpus, and score each evaluation prompt by the residual between the two models. Since no benign corpus covers the sparse trigger region, the reference learns the benign computation but not the hidden behavior. Therefore, trigger prompts--and, crucially, their semantic neighbors--incur a large residual that signal the presence of unusual behavior to the defender. Testing our method across third-party models and custom models, activation-matched finetuning surfaces hidden behavior reliably. Furthermore, we empirically consider a natural defense-aware attack and showcase that it fails to suppress our detection method without sacrificing the behavior itself.},
+  pdf={backdoor_detection.pdf},
+  code={https://github.com/RobinHaselhorst/activation-matched-finetuning/},
+  note={Preprint hosted on this website},
+  bibtex_show={true},
+  selected={false},
+  abbr={Preprint}
+}
+
+@article{moustafa2026beyondliarsbench,
+  title={Beyond Liars' Bench: The Impact of Lie Typology, Depth, and Sparsity on Deception Detection in {LLMs}},
+  author={Amr Moustafa and Max Feser and Florian Mai},
+  journal={AI Transparency Journal},
+  year={2026},
+  abstract={Training probes to detect deceptive outputs from large language models is still an open problem. Recent work has demonstrated that detection probes fail especially in out-of-domain scenarios--training on one type of lie does not transfer well to deception scenarios involving other types of lies. In this work, we conduct a systematic study on how various factors impact detection performance: representation depth, probe expressivity, sparse feature representations, and the lie typology of the training data. To this end, we augment standard benchmark training data with a supplementary dataset containing diverse types of deception, including fabrication, omission, and exaggeration examples. Analyzing these factors across seven probe types, our experimental results show that the optimal representation depth is highly dataset-dependent, more expressive probes provide only selective gains over linear baselines, and sparse autoencoder features perform similarly to dense hidden states. Ultimately, we demonstrate that the choice of training data and lie typology substantially changes detectability, highlighting that deception detection is a highly representation-dependent problem.},
+  pdf={lie_detection.pdf},
+  note={Presented at the AI Transparency Conference; forthcoming in the first edition of the AI Transparency Journal.},
+  bibtex_show={true},
+  selected={false},
+  abbr={AITJ}
+}
+
 @inproceedings{dung2026alignmentrisk,
   title={AI Alignment Strategies from a Risk Perspective: Independent Safety Mechanisms or Shared Failures?},
   author={Dung, Leonard and Mai, Florian},
