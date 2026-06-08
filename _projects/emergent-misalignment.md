@@ -29,5 +29,5 @@ building on our recent methods for in-training safeguards described in
 
 ### Outputs
 
-* **Preprint:** In-Training Defenses against Emergent Misalignment in Language Models — arXiv [(paper)](https://arxiv.org/abs/2508.06249)
+* **ICML 2026:** In-Training Defenses against Emergent Misalignment in Language Models [(paper)](https://arxiv.org/abs/2508.06249)
 
