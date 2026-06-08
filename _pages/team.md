@@ -4,7 +4,7 @@ permalink: /team/
 title: team
 description: Meet the members of the mAI alignment lab
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 {% assign team_members = site.team | sort: 'order' %}

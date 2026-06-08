@@ -1,11 +1,14 @@
-
           <div class="news">
             {% if site.news != blank -%}
             {%- assign news_size = site.news | size -%}
-            <div class="table-responsive" {% if site.news.scrollable and news_size > 3 %}style="max-height: 10vw"{% endif %}>
+            <div class="table-responsive" {% if site.news.scrollable and news_size > 3 and include.limit != false %}style="max-height: 10vw"{% endif %}>
               <table class="table table-sm table-borderless">
               {%- assign news = site.news | reverse -%}
-              {% if site.news.limit %}
+              {% if include.limit == false %}
+              {% assign news_limit = news_size %}
+              {% elsif include.limit %}
+              {% assign news_limit = include.limit %}
+              {% elsif site.news.limit %}
               {% assign news_limit = site.news.limit %}
               {% else %}
               {% assign news_limit = news_size %}
@@ -24,6 +27,9 @@
               {%- endfor %}
               </table>
             </div>
+            {% if include.show_archive_link and news_size > news_limit -%}
+              <p class="news-archive-link"><a href="{{ '/news/' | relative_url }}">View all news</a></p>
+            {%- endif %}
           {%- else -%}
             <p>No news so far...</p>
           {%- endif %}

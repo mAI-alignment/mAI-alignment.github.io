@@ -43,13 +43,7 @@ layout: default
           <!-- News -->
           {% if page.news -%}
             <h2><a href="{{ '/news/' | relative_url }}" style="color: #0c446b;">news</a></h2>
-            {%- include news.html %}
-          {%- endif %}
-
-          <!-- Latest posts -->
-          {% if page.latest_posts -%}
-            <h2><a href="{{ '/blog/' | relative_url }}" style="color: #0c446b;">safety reading group</a></h2>
-            {%- include latest_posts.html %}
+            {%- include news.html limit=5 show_archive_link=true %}
           {%- endif %}
 
           <!-- Selected papers -->
