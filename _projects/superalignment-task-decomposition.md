@@ -17,6 +17,8 @@ category: ongoing
 
 Our central questions are **part‑to‑whole generalisation** (does alignment on subtasks imply alignment of the entire answer?) and **robustness to reward‑hacking**. We describe a roadmap for this research direction in a [position paper](https://arxiv.org/abs/2503.13621) published at the [Workshop on Bidirectional Alignment](https://iclr.cc/virtual/2025/workshop/23986) at ICLR 2025.
 
+This project is supported by a $100,000 USD grant from [Coefficient Giving](https://coefficientgiving.org/).
+
 <div class="row justify-content-sm-center">
     <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.html path="assets/img/projects/framework.png" title="Framework diagram" class="img-fluid rounded z-depth-1" %}
