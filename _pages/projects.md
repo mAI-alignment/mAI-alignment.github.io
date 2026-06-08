@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: Our research projects in AI alignment and safety.
 nav: true
-nav_order: 3
+nav_order: 4
 display_categories: [ongoing, completed]
 horizontal: false
 ---
