@@ -2,7 +2,7 @@
 layout: page
 name: Dr. Florian Mai
 position: Junior Research Group Leader
-office: "Office 2.107, Friedrich-Hirzebruch-Allee 6, Bonn, Germany"
+office: "Office 2.108, Friedrich-Hirzebruch-Allee 6, Bonn, Germany"
 email: fmai@uni-bonn.de
 website: https://florianmai.github.io
 google_scholar: https://scholar.google.com/citations?user=your_id
@@ -14,9 +14,9 @@ order: 1
 
 Dr. Florian Mai leads the mAI alignment lab, focusing on AI alignment and safety research. His work spans value alignment, reasoning models, and the development of safe large scale AI systems.
 
-**Research Interests:**
-- AI Alignment and Safety
-- Value Learning and Preference Modeling
-- Reasoning models
-- Self-supervised learning
-- LLM training
+**Projects:**
+- [Scalable Oversight by Learning to Decompose Tasks](/projects/superalignment-task-decomposition/)
+- [Emergent Misalignment](/projects/emergent-misalignment/)
+- [Backdoor Detection](/projects/backdoor-detection/)
+- [Value Alignment](/projects/value-alignment/)
+- [Learning to Plan from Unlabeled Data](/projects/learning-to-plan/)

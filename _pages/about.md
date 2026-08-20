@@ -22,19 +22,13 @@ Welcome to the mAI alignment lab, a Junior Research Group at the University of B
 
 Our research focuses on AI alignment and safety issues, exploring how to ensure that current and future advanced AI systems are acting reliably in accordance with human values.
 
-## Research Interests
-
-- Scalable Oversight
-- Value alignment
-- Emergent misalignment
-- Reasoning Models
-- LLM training
-
 ## Current Projects
 
 - **[Scalable Oversight by Learning to Decompose Tasks](/projects/superalignment-task-decomposition/)**: Exploring how AI systems can learn to break complex tasks into manageable subtasks for reliable human oversight, advancing the frontier of superalignment research.
 
 - **[Emergent Misalignment](/projects/emergent-misalignment/)**: Investigating how narrow finetuning can produce broadly misaligned language models and developing methods to prevent such misalignment.
+
+- **[Backdoor Detection](/projects/backdoor-detection/)**: Detecting hidden behaviors in language models — such as backdoors, sleeper agents, sandbagging, and censorship — without prior knowledge of the trigger or the target behavior.
 
 - **[Value Alignment](/projects/value-alignment/)**: Researching methods to ensure AI systems align with human values and preferences.
 
