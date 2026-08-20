@@ -61,3 +61,20 @@
     - "Design and implement AI alignment techniques"
   prerequisites: "One of the following: Introduction to Natural Language Processing, Reinforcement Learning, Technical Neural Nets"
   instructors: ["Dr. Florian Mai"]
+
+- title: "AI Safety Seminar"
+  description: "A seminar introducing students to the technical foundations of AI safety, covering alignment and value specification, control and autonomy of advanced AI systems, and systemic risks. Compared to its predecessor A(G)I Ethics, the seminar concentrates on technical AI safety research rather than the broader ethical and policy debate. Students engage with recent research papers, give a presentation, and write an essay."
+  type: "Seminar"
+  course_code: "MA-INF 4116"
+  year: 2026
+  semester: "Summer"
+  ects: 4
+  image: "courses/ai-safety.png"
+  learning_outcomes:
+    - "Understand alignment and value specification challenges"
+    - "Analyze technical approaches to overseeing and controlling advanced AI"
+    - "Critically assess recent AI safety research papers"
+    - "Present research findings and write a scientific essay"
+  prerequisites: "Basic computer science background; machine learning experience helpful but not required"
+  instructors: ["Dr. Florian Mai"]
+  schedule: "Wednesday 2:15-3:45 PM, Room B-IT 2.113a"
