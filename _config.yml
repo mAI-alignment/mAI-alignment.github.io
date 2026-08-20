@@ -261,6 +261,11 @@ scholar:
   last_name: [Mai]
   first_name: [Florian, F.]
 
+  # Order publications by date (newest first) rather than by their
+  # position in papers.bib. Requires each entry to carry a month field.
+  sort_by: year,month
+  order: descending
+
   style: apa
   locale: en
 
