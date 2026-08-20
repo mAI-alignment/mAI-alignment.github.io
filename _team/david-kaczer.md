@@ -8,8 +8,5 @@ order: 2
 
 David is a PhD student at the University of Bonn under the supervision of Dr. Florian Mai and Prof. Dr. Lucie Flek since August 2024. His current research interests include [emergent misalignment](https://arxiv.org/abs/2502.17424), reinforcement learning, and the training of large language models.
 
-**Research Interests:**
-- Emergent misalignment
-- Reinforcement learning in NLP
-- Reasoning models
-- Training LLMs
+**Projects:**
+- [Emergent Misalignment](/projects/emergent-misalignment/)

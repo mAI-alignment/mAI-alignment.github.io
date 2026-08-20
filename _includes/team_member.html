@@ -1,0 +1,35 @@
+<div class="team-member" style="margin-bottom: 2rem;">
+  {% if include.member.profile_pic %}
+  <div style="float: left; margin-right: 1rem; margin-bottom: 1rem;">
+    <img src="{{ '/assets/img/' | append: include.member.profile_pic | relative_url }}" alt="{{ include.member.name }}" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%;">
+  </div>
+  {% endif %}
+
+  <h3>{{ include.member.name }}</h3>
+  <p><strong>{{ include.member.position }}</strong></p>
+  {% if include.member.office %}
+  <p><em>{{ include.member.office }}</em></p>
+  {% endif %}
+
+  <p>
+    {% if include.member.email %}
+    <a href="mailto:{{ include.member.email }}"><i class="fas fa-envelope"></i> Email</a> |
+    {% endif %}
+    {% if include.member.website %}
+    <a href="{{ include.member.website }}" target="_blank"><i class="fas fa-home"></i> Website</a> |
+    {% endif %}
+    {% if include.member.google_scholar %}
+    <a href="{{ include.member.google_scholar }}" target="_blank"><i class="ai ai-google-scholar"></i> Google Scholar</a> |
+    {% endif %}
+    {% if include.member.github %}
+    <a href="{{ include.member.github }}" target="_blank"><i class="fab fa-github"></i> GitHub</a> |
+    {% endif %}
+    {% if include.member.linkedin %}
+    <a href="{{ include.member.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    {% endif %}
+  </p>
+
+  <div style="clear: both;">
+    {{ include.member.content }}
+  </div>
+</div>
