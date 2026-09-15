@@ -30,6 +30,6 @@ building on our recent methods for in-training safeguards described in
 ### Outputs
 
 * **ICML 2026:** In-Training Defenses against Emergent Misalignment in Language Models [(paper)](https://arxiv.org/abs/2508.06249)
-* **Preprint:** Data Attribution of Emergent Misalignment with Persona Features — arXiv [(paper)](https://arxiv.org/abs/2608.11025)
-* **Preprint:** Reinforcement Learning Amplifies Emergent Misalignment from Harmless Rewards — arXiv [(paper)](https://arxiv.org/abs/2605.31328)
+* **EMNLP 2026:** Reinforcement Learning Can Amplify Emergent Misalignment from Harmless Rewards [(paper)](https://arxiv.org/abs/2605.31328)
+* **BlackboxNLP 2026 (EMNLP workshop):** Data Attribution of Emergent Misalignment with Persona Features [(paper)](https://arxiv.org/abs/2608.11025)
 
