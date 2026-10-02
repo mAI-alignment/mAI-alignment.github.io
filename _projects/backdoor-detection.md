@@ -30,5 +30,5 @@ Our central questions are:
 
 ### Outputs
 
-* **Preprint:** Detecting Hidden Behaviors in LLMs via Activation-matched Finetuning [(paper)](/assets/pdf/backdoor_detection.pdf)
+* **Preprint:** Detecting Hidden Behaviors in LLMs via Activation-matched Finetuning [(paper)](https://arxiv.org/abs/2609.00351)
 * **Code:** [activation-matched-finetuning](https://github.com/RobinHaselhorst/activation-matched-finetuning/)
