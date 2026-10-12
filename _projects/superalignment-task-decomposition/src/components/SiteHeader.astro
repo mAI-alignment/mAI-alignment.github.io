@@ -1,0 +1,82 @@
+---
+import { NAV, SITE } from '../site.config';
+import { url } from '../lib/updates';
+import ThemeToggle from './ThemeToggle.astro';
+
+const path = Astro.url.pathname;
+const isCurrent = (href: string) => path === url(href) || path.startsWith(url(href));
+const isHome = path === url('/');
+---
+
+<header class="site-header">
+  <div class="page site-header__inner">
+    <a class="site-title" href={url('/')} aria-current={isHome ? 'page' : undefined}>{SITE.title}</a>
+    <nav aria-label="Main">
+      <ul>
+        {
+          NAV.map((item) => (
+            <li>
+              <a href={url(item.href)} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <ThemeToggle />
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .site-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-5);
+    padding-block: var(--space-4);
+  }
+
+  .site-title {
+    margin-inline-end: auto;
+    color: var(--color-text);
+    font-size: var(--step-1);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+
+  .site-title:hover {
+    color: var(--color-accent);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-5);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+  }
+
+  nav a {
+    display: inline-block;
+    padding-block: var(--space-1);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  nav a:hover,
+  nav a[aria-current='page'] {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.3em;
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+# Copy this file to src/content/updates/<descriptive-name>.mdx when the entry needs figures with captions
+# or other components. The filename becomes the URL: /updates/<descriptive-name>/
+title: "A short, descriptive update title"
+description: "A plain-language summary of the question and the main takeaway (one or two sentences)."
+date: 2026-10-08
+draft: true
+# label: "Research update"
+# authors:
+#   - "Name"
+# tags:
+#   - results
+# updated: 2026-10-12
+# toc: true
+---
+
+import Figure from '../../components/Figure.astro';
+import Callout from '../../components/Callout.astro';
+{/* Put images in src/assets/updates/ and import them here: */}
+{/* import lossCurve from '../../assets/updates/<descriptive-name>-loss.svg'; */}
+
+Plain-language opening: what was investigated, what happened, and why it matters.
+
+## Main explanation
+
+{/*
+<Figure
+  src={lossCurve}
+  alt="What the image shows, for someone who cannot see it."
+  wide
+  id="fig-1"
+>
+  <strong>Figure 1.</strong> What the figure shows and its main takeaway. Explain axes, units and uncertainty.
+</Figure>
+*/}
+
+## Limitations and next steps
+
+<Callout title="Limitation">
+A caveat readers should not miss.
+</Callout>
