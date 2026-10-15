@@ -7,6 +7,8 @@ importance: 1
 category: ongoing
 ---
 
+**Research blog:** we document results, methods and setbacks of this project as the work develops in our [project blog]({{ '/superalignment-task-decomposition/' | relative_url }}).
+
 ### Synopsis
 
 *Scalable Oversight by Learning to Decompose Tasks* explores a route to supervising increasingly capable reinforcement‑learning (RL) systems by having an AI **learn to break a hard task into "safe" subtasks** that a human‑level model (or a human) can reliably judge. Inspired by Iterated Amplification but removing the bottleneck of manual decomposition, we train a **decomposer policy**—via RL—to:
@@ -30,5 +32,6 @@ This project is supported by a $100,000 USD grant from [Coefficient Giving](http
 
 ### Outputs
 
+* **Blog:** [Research blog]({{ '/superalignment-task-decomposition/' | relative_url }}) with progress updates from the project
 * **Paper:** Superalignment with Dynamic Human Values, published at the ICLR 2025 Workshop on Bidirectional Human-AI Alignment (BiAlign) [(paper)](https://arxiv.org/abs/2503.13621)  
 * **Talk:** "Scalable Oversight with Evolving Human Values", presented at the International Conference on Large-Scale AI Risks, KU Leuven ([slide deck](https://docs.google.com/presentation/d/1xSwmkp20RrV3lS_miMC-6T_o6hsBPTWu8Sxg3H3fvYs/edit?usp=sharing))
