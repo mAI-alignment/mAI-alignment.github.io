@@ -1,0 +1,63 @@
+---
+import { PROJECT_LINKS, SITE } from '../site.config';
+import { url } from '../lib/updates';
+---
+
+<footer class="site-footer">
+  <div class="page site-footer__inner meta">
+    <p class="site-footer__name">{SITE.title}</p>
+    {SITE.authorLine && <p>{SITE.authorLine}</p>}
+    <ul>
+      <li><a href={url('/updates/')}>All updates</a></li>
+      <li><a href={url('/papers/')}>Papers</a></li>
+      <li><a href={url('/about/')}>About the project</a></li>
+      {Astro.site && <li><a href={url('/rss.xml')}>RSS feed</a></li>}
+      {
+        PROJECT_LINKS.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: var(--space-8);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .site-footer__inner {
+    padding-block: var(--space-6) var(--space-7);
+  }
+
+  p {
+    margin: 0 0 var(--space-2);
+  }
+
+  .site-footer__name {
+    font-family: var(--font-serif);
+    font-size: var(--step-0);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-5);
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    color: var(--color-muted);
+  }
+
+  a:hover {
+    color: var(--color-accent);
+  }
+</style>

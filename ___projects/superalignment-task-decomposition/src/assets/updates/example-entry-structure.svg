@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 230" width="920" height="230" role="img" aria-labelledby="t d">
+  <title id="t">Layered structure of an update</title>
+  <desc id="d">Four boxes in sequence, left to right: plain-language opening, main explanation, technical detail, and limitations and next steps. Arrows connect each box to the next. A bracket under the first two boxes reads "for every reader"; a bracket under the last two reads "added when needed".</desc>
+  <style>
+    text { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; fill: #19232c; }
+    .box { fill: #edf0f0; stroke: #78929c; stroke-width: 1.5; }
+    .box.accent { stroke: #ba4236; stroke-width: 2; }
+    .head { font-size: 17px; font-weight: 600; }
+    .sub { font-size: 14px; fill: #66717a; }
+    .arrow { stroke: #66717a; stroke-width: 1.5; fill: none; marker-end: url(#a); }
+    .bracket { stroke: #66717a; stroke-width: 1.2; fill: none; }
+    .note { font-size: 14px; fill: #66717a; font-style: italic; }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#66717a"/>
+    </marker>
+  </defs>
+  <rect class="box accent" x="10" y="30" width="190" height="96" rx="3"/>
+  <text class="head" x="105" y="68" text-anchor="middle">1 · Opening</text>
+  <text class="sub" x="105" y="92" text-anchor="middle">what, result, why</text>
+
+  <rect class="box" x="246" y="30" width="190" height="96" rx="3"/>
+  <text class="head" x="341" y="68" text-anchor="middle">2 · Explanation</text>
+  <text class="sub" x="341" y="92" text-anchor="middle">context and evidence</text>
+
+  <rect class="box" x="482" y="30" width="190" height="96" rx="3" stroke-dasharray="5 4"/>
+  <text class="head" x="577" y="68" text-anchor="middle">3 · Technical detail</text>
+  <text class="sub" x="577" y="92" text-anchor="middle">methods, settings</text>
+
+  <rect class="box" x="718" y="30" width="190" height="96" rx="3" stroke-dasharray="5 4"/>
+  <text class="head" x="813" y="68" text-anchor="middle">4 · Limitations</text>
+  <text class="sub" x="813" y="92" text-anchor="middle">uncertainty, next steps</text>
+
+  <path class="arrow" d="M202 78H243"/>
+  <path class="arrow" d="M438 78H479"/>
+  <path class="arrow" d="M674 78H715"/>
+
+  <path class="bracket" d="M12 150v12H434v-12M223 162v10"/>
+  <text class="note" x="223" y="196" text-anchor="middle">for every reader (solid outline)</text>
+  <path class="bracket" d="M484 150v12H906v-12M695 162v10"/>
+  <text class="note" x="695" y="196" text-anchor="middle">added when needed (dashed outline)</text>
+</svg>

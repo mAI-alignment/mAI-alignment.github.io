@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PaperList from '../components/PaperList.astro';
+import { groupByYear } from '../lib/entries';
+import { getPapers } from '../lib/updates';
+
+const years = groupByYear(await getPapers());
+---
+
+<BaseLayout title="Papers" description="Papers and preprints from the project, newest first.">
+  <div class="page">
+    <header class="papers-header">
+      <h1>Papers</h1>
+      <p>Peer-reviewed papers and preprints from the project, newest first.</p>
+    </header>
+
+    {
+      years.length === 0 ? (
+        <p class="empty">No papers have been listed yet.</p>
+      ) : (
+        years.map((group) => (
+          <section class="year" aria-labelledby={`year-${group.year}`}>
+            <h2 id={`year-${group.year}`} class="section-heading">
+              {group.year}
+            </h2>
+            <PaperList papers={group.items} />
+          </section>
+        ))
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .papers-header {
+    padding-block: var(--space-7) var(--space-6);
+  }
+
+  h1 {
+    margin: 0 0 var(--space-3);
+    font-size: var(--step-4);
+    font-weight: 450;
+    letter-spacing: -0.02em;
+  }
+
+  .papers-header p,
+  .empty {
+    margin: 0;
+    color: var(--color-muted);
+  }
+
+  .year + .year {
+    margin-top: var(--space-7);
+  }
+</style>

@@ -1,0 +1,168 @@
+---
+import 'katex/dist/katex.min.css';
+import '../styles/prose.css';
+import type { MarkdownHeading } from 'astro';
+import BaseLayout from './BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import { updateUrl, url, type Update } from '../lib/updates';
+
+interface Props {
+  entry: Update;
+  headings: MarkdownHeading[];
+  newer?: Update;
+  older?: Update;
+}
+
+const { entry, headings, newer, older } = Astro.props;
+const { title, description, date, updated, authors, tags, label, draft, toc } = entry.data;
+
+// Long entries get a table of contents automatically; short notes stay uncluttered.
+const sectionCount = headings.filter((heading) => heading.depth === 2).length;
+const showToc = toc ?? sectionCount >= 4;
+---
+
+<BaseLayout title={title} description={description} type="article" publishedTime={date} modifiedTime={updated}>
+  <article class="article">
+    <header class="article__header">
+      <p class="article__kicker">
+        {draft && <span class="draft-flag">Draft</span>}
+        <span class="label">{label ?? 'Update'}</span>
+      </p>
+      <h1 class="article__title">{title}</h1>
+      <p class="article__description">{description}</p>
+      <div class="article__meta meta">
+        {authors.length > 0 && <p class="article__authors">{authors.join(', ')}</p>}
+        <p>
+          Published <FormattedDate date={date} />
+          {
+            updated && (
+              <>
+                <span aria-hidden="true"> · </span>Updated <FormattedDate date={updated} />
+              </>
+            )
+          }
+        </p>
+        {tags.length > 0 && <p class="article__tags"><span class="visually-hidden">Topics: </span>{tags.join(' · ')}</p>}
+      </div>
+    </header>
+
+    {
+      showToc && (
+        <div class="article__toc">
+          <TableOfContents headings={headings} />
+        </div>
+      )
+    }
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    {
+      (newer || older) && (
+        <nav class="article__pagination" aria-label="More updates">
+          {older && (
+            <a href={updateUrl(older)} rel="prev">
+              <span class="meta">Previous update</span>
+              {older.data.title}
+            </a>
+          )}
+          {newer && (
+            <a href={updateUrl(newer)} rel="next" class="article__next">
+              <span class="meta">Next update</span>
+              {newer.data.title}
+            </a>
+          )}
+        </nav>
+      )
+    }
+    <p class="article__back meta"><a href={url('/updates/')}>All updates</a></p>
+  </article>
+</BaseLayout>
+
+<style>
+  .article {
+    padding-inline: var(--gutter);
+    padding-top: var(--space-7);
+  }
+
+  .article__header,
+  .article__toc,
+  .article__pagination,
+  .article__back {
+    max-width: var(--measure);
+    margin-inline: auto;
+  }
+
+  .article__header {
+    margin-bottom: var(--space-6);
+  }
+
+  .article__kicker {
+    margin: 0 0 var(--space-3);
+  }
+
+  .article__title {
+    margin: 0 0 var(--space-4);
+    font-size: var(--step-4);
+    font-weight: 450;
+    letter-spacing: -0.015em;
+  }
+
+  .article__description {
+    margin: 0 0 var(--space-5);
+    font-size: var(--step-1);
+    line-height: 1.45;
+    color: var(--color-muted);
+  }
+
+  .article__meta p {
+    margin: 0 0 var(--space-1);
+  }
+
+  .article__authors {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .article__toc {
+    margin-bottom: var(--space-6);
+  }
+
+  .article__pagination {
+    display: grid;
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-rule-strong);
+  }
+
+  @media (min-width: 40rem) {
+    .article__pagination {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .article__next {
+      grid-column: 2;
+      text-align: end;
+    }
+  }
+
+  .article__pagination a {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    color: var(--color-text);
+    text-decoration: none;
+    line-height: 1.35;
+  }
+
+  .article__pagination a:hover {
+    color: var(--color-accent);
+  }
+
+  .article__back {
+    margin-top: var(--space-5);
+  }
+</style>

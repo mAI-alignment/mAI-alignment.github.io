@@ -1,0 +1,108 @@
+---
+title: "Example: a long technical article with equations, figures and notes"
+description: "A formatting example that exercises every element a long research entry can use: sections, mathematics, figures, tables, code, footnotes and callouts. Not a research result."
+date: 2026-10-08
+draft: true
+label: "Methods"
+authors:
+  - "TODO(content): Author name"
+tags:
+  - example
+  - methods
+---
+
+import Figure from '../../components/Figure.astro';
+import Callout from '../../components/Callout.astro';
+import structure from '../../assets/updates/example-entry-structure.svg';
+
+<Callout title="Example entry" kind="caution">
+This draft exists only to check the design of long articles. It is excluded from production builds. Every equation below is a standard textbook identity used for typesetting, not a finding of this project.
+</Callout>
+
+An update opens with a plain-language summary: what was investigated, what happened, and why it matters. A reader who stops after this paragraph should still leave with the main point.
+
+## How an entry is layered
+
+Entries are written in layers, so that both a curious reader and a specialist find what they need. The figure below shows the pattern; the last two layers appear only when the material calls for them.
+
+<Figure
+  src={structure}
+  alt="Four boxes in a row connected by arrows: opening, explanation, technical detail, and limitations. The first two are outlined solidly and marked 'for every reader'; the last two are dashed and marked 'added when needed'."
+  wide
+  priority
+  id="fig-structure"
+>
+  <strong>Figure 1.</strong> The layered structure of an update. Solid outlines mark the parts every entry has; dashed outlines mark parts added only for longer technical entries.
+</Figure>
+
+The surrounding prose should always state the takeaway of a figure, as this sentence does: short notes stop after the second layer, while long articles use all four.[^layers]
+
+## Mathematics
+
+Inline mathematics sits within a sentence, such as the probability $p(x \mid \theta)$ of an observation $x$ under parameters $\theta$. Display equations stand on their own line. For example, the softmax function turns a vector of scores $z \in \mathbb{R}^K$ into probabilities:
+
+$$
+\operatorname{softmax}(z)_i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}, \qquad i = 1, \dots, K.
+$$
+
+Here $z_i$ is the $i$-th score and $K$ is the number of classes. Notation is explained immediately after the equation that introduces it.
+
+Long equations scroll within their own box on narrow screens instead of widening the page. The chain rule of probability, written out in full, is a useful test:
+
+$$
+p(x_1, x_2, x_3, x_4, x_5, x_6) = p(x_1)\, p(x_2 \mid x_1)\, p(x_3 \mid x_1, x_2)\, p(x_4 \mid x_1, x_2, x_3)\, p(x_5 \mid x_1, x_2, x_3, x_4)\, p(x_6 \mid x_1, x_2, x_3, x_4, x_5).
+$$
+
+### Aligned derivations
+
+Multi-line derivations use the `aligned` environment:
+
+$$
+\begin{aligned}
+\log \prod_{n=1}^{N} p(x_n \mid \theta) &= \sum_{n=1}^{N} \log p(x_n \mid \theta) \\
+&= N \, \mathbb{E}_{\hat{p}}\!\left[\log p(x \mid \theta)\right],
+\end{aligned}
+$$
+
+where $\hat{p}$ is the empirical distribution of the $N$ observations.
+
+## Tables
+
+Tables suit notation, settings and small sets of numbers. Wide tables scroll horizontally on narrow screens.
+
+| Symbol | Meaning | Where it appears |
+| :--- | :--- | :--- |
+| $x$ | An observation | Throughout |
+| $\theta$ | Model parameters | Mathematics section |
+| $z \in \mathbb{R}^K$ | A vector of $K$ real-valued scores | Softmax definition |
+| $N$ | Number of observations | Aligned derivation |
+
+## Code
+
+Code blocks are highlighted at build time and scroll horizontally when lines are long.
+
+```python
+import numpy as np
+
+def softmax(z: np.ndarray) -> np.ndarray:
+    """Numerically stable softmax over the last axis."""
+    shifted = z - z.max(axis=-1, keepdims=True)
+    exp = np.exp(shifted)
+    return exp / exp.sum(axis=-1, keepdims=True)
+```
+
+## Footnotes and references
+
+Footnotes hold asides and citations without interrupting the argument.[^citation] Each note links back to the place it was referenced. Cite original sources with descriptive link text, for example the [KaTeX documentation of supported functions](https://katex.org/docs/supported.html).
+
+## Limitations and next steps
+
+The final layer separates observation from interpretation and states what remains uncertain. It also names the next investigation, linking to the [short note example](/updates/example-short-note/) or other entries where relevant.
+
+<Callout title="Limitation">
+Callouts highlight caveats a reader should not miss. Use them sparingly so they keep their weight.
+</Callout>
+
+[^layers]: This is a flexible pattern, not a required set of headings.
+
+[^citation]: A full citation would go here: Author, *Title*, Venue, Year, with a link to the original.

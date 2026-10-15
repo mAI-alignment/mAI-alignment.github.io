@@ -1,0 +1,95 @@
+---
+import FormattedDate from './FormattedDate.astro';
+import { updateUrl, type Update } from '../lib/updates';
+
+interface Props {
+  entries: Update[];
+  /** Heading level of entry titles, so the list fits the surrounding outline. */
+  headingLevel?: 2 | 3;
+}
+
+const { entries, headingLevel = 3 } = Astro.props;
+const Heading = `h${headingLevel}` as 'h2' | 'h3';
+---
+
+<ol class="entry-list" reversed>
+  {
+    entries.map((entry) => (
+      <li class="entry">
+        <p class="entry__date meta">
+          <FormattedDate date={entry.data.date} />
+        </p>
+        <div class="entry__body">
+          {entry.data.label && <p class="entry__label label">{entry.data.label}</p>}
+          <Heading class="entry__title">
+            {entry.data.draft && <span class="draft-flag">Draft</span>}
+            <a href={updateUrl(entry)}>{entry.data.title}</a>
+          </Heading>
+          <p class="entry__description">{entry.data.description}</p>
+          {entry.data.authors.length > 0 && <p class="meta">{entry.data.authors.join(', ')}</p>}
+        </div>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .entry-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .entry {
+    display: grid;
+    gap: var(--space-1) var(--space-6);
+    padding-block: var(--space-5);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .entry:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  @media (min-width: 44rem) {
+    .entry {
+      grid-template-columns: 9.5rem minmax(0, 1fr);
+    }
+
+    .entry__date {
+      padding-top: 0.35em;
+    }
+  }
+
+  .entry p {
+    margin: 0;
+  }
+
+  .entry__label {
+    margin-bottom: var(--space-1) !important;
+  }
+
+  .entry__title {
+    margin: 0 0 var(--space-2);
+    font-size: var(--step-1);
+    font-weight: 500;
+  }
+
+  .entry__title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .entry__title a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+  }
+
+  .entry__description {
+    max-width: var(--measure);
+    margin-bottom: var(--space-2) !important;
+    color: var(--color-muted);
+  }
+</style>

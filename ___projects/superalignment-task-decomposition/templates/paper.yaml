@@ -1,0 +1,20 @@
+# Copy this file to src/content/papers/<short-descriptive-name>.yaml
+# It appears on /papers/ (and the homepage) automatically after the next build.
+title: Paper title
+authors:
+  - First Author
+  - Second Author
+venue: Conference or workshop name and year # omit for an unpublished preprint
+date: 2026-01-31 # publication or first-release date, YYYY-MM-DD
+url: https://arxiv.org/abs/0000.00000 # main link, used for the title
+links: # optional
+  - label: PDF
+    href: https://arxiv.org/pdf/0000.00000
+  # - label: Code
+  #   href: https://github.com/...
+abstract: >- # optional; the paper's own abstract
+  One paragraph.
+bibtex: |- # optional; e.g. from the "Export BibTeX citation" link on arXiv
+  @misc{key,
+    title={...},
+  }

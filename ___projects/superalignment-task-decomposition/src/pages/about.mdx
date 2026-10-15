@@ -1,0 +1,59 @@
+---
+layout: ../layouts/PageLayout.astro
+title: About the project
+description: "Scalable Oversight by Learning to Decompose Tasks: training an AI to break hard tasks into subtasks that weaker models, or humans, can reliably judge. A project of the mAI alignment lab at the University of Bonn."
+---
+
+import Figure from '../components/Figure.astro';
+import framework from '../assets/project/framework.png';
+
+**Scalable Oversight by Learning to Decompose Tasks** explores a route to supervising increasingly capable reinforcement-learning (RL) systems: an AI learns to break a hard task into “safe” subtasks that a human-level model, or a human, can reliably judge.
+
+This site is the project's research notebook. It extends the [project page](https://mai-alignment.github.io/projects/superalignment-task-decomposition/) of the [mAI alignment lab](https://mai-alignment.github.io/) with regular [updates](/updates/) on results, methods, setbacks and explanations as the work develops.
+
+## The problem
+
+As AI systems become more capable, people will find it harder to check whether their answers to difficult tasks are correct and aligned with human values. This challenge is known as *scalable oversight*. Directly judging the output of a system more capable than oneself may not be possible, but judging small, well-defined pieces of its work can be.
+
+## Our approach
+
+The project is inspired by [Iterated Amplification](https://arxiv.org/abs/1810.08575), but removes one of its bottlenecks: decomposing tasks by hand. Instead, we train a *decomposer* policy with reinforcement learning to:
+
+- output subtasks in a constrained format,
+- keep each subtask within the competence of a weaker language-model executor, and
+- maximise the correctness of the final answer once the sub-solutions are recomposed.
+
+<Figure
+  src={framework}
+  alt="Diagram. A planner AI decomposes a task into subtasks and composes the solution from partial solutions. Weak AIs solve the subtasks and judge the partial solutions. A human aligns the weak AIs. A verification step checks the solution and trains the planner AI."
+  credit="Figure: mAI alignment lab."
+  id="fig-framework"
+>
+  <strong>Framework.</strong> Scalable oversight through task decomposition and dynamic human value alignment. A planner AI splits the task into subtasks; weak AIs, aligned by humans, solve the subtasks and judge the partial solutions; verification of the composed solution provides the training signal for the planner.
+</Figure>
+
+## Central questions
+
+- **Part-to-whole generalisation.** Does alignment on subtasks imply alignment of the entire answer? The position paper calls this the *part-to-complete generalization hypothesis* and argues that this generalisation needs to be measured and improved.
+- **Robustness to reward hacking.** Can the decomposer be trained without learning to exploit weaknesses in how its subtasks and solutions are judged?
+
+## Outputs
+
+- **Paper:** Florian Mai, David Kaczér, Nicholas Kluge Corrêa and Lucie Flek, [*Superalignment with Dynamic Human Values*](https://arxiv.org/abs/2503.13621), [Workshop on Bidirectional Human-AI Alignment (BiAlign)](https://iclr.cc/virtual/2025/workshop/23986) at ICLR 2025. A position paper describing the roadmap for this research direction.
+- **Talk:** “Scalable Oversight with Evolving Human Values”, International Conference on Large-Scale AI Risks, KU Leuven ([slide deck](https://docs.google.com/presentation/d/1xSwmkp20RrV3lS_miMC-6T_o6hsBPTWu8Sxg3H3fvYs/edit?usp=sharing)).
+
+All papers, with abstracts and BibTeX, are listed on the [Papers](/papers/) page. New results will appear first in the [updates](/updates/).
+
+## Team
+
+The project is carried out at the [mAI alignment lab](https://mai-alignment.github.io/), a Junior Research Group at the University of Bonn.
+
+- **Dr. Florian Mai**, Junior Research Group Leader
+- **Dr. Lukasz Karwacki**, Research Assistant
+- **Sayantak Karar**, student assistant (alumnus)
+
+See the [lab's team page](https://mai-alignment.github.io/team/) for details.
+
+## Funding
+
+This project is supported by a $100,000 USD grant from [Coefficient Giving](https://coefficientgiving.org/).

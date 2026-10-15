@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EntryList from '../components/EntryList.astro';
+import PaperList from '../components/PaperList.astro';
+import { SITE } from '../site.config';
+import { getPapers, getUpdates, url } from '../lib/updates';
+
+const updates = await getUpdates();
+const latest = updates.slice(0, SITE.homepageEntries);
+const papers = await getPapers();
+const recentPapers = papers.slice(0, 3);
+---
+
+<BaseLayout>
+  <div class="page">
+    <section class="intro" aria-labelledby="project-title">
+      <h1 id="project-title" class="intro__title">{SITE.title}</h1>
+      <p class="intro__question">{SITE.question}</p>
+      <p class="intro__text">{SITE.introduction}</p>
+      <p class="intro__more meta"><a href={url('/about/')}>About the project</a></p>
+    </section>
+
+    <section aria-labelledby="latest-heading" class="latest">
+      <h2 id="latest-heading" class="section-heading">Latest updates</h2>
+      {
+        latest.length > 0 ? (
+          <EntryList entries={latest} />
+        ) : (
+          <p class="empty">No updates have been published yet.</p>
+        )
+      }
+      {
+        updates.length > latest.length && (
+          <p class="latest__all meta">
+            <a href={url('/updates/')}>All {updates.length} updates</a>
+          </p>
+        )
+      }
+    </section>
+
+    {
+      recentPapers.length > 0 && (
+        <section aria-labelledby="papers-heading" class="papers">
+          <h2 id="papers-heading" class="section-heading">
+            Papers
+          </h2>
+          <PaperList papers={recentPapers} details={false} />
+          <p class="latest__all meta">
+            <a href={url('/papers/')}>{papers.length > 1 ? `All ${papers.length} papers` : 'Abstract and citation'}</a>
+          </p>
+        </section>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .intro {
+    max-width: 46rem;
+    padding-block: var(--space-8) var(--space-7);
+  }
+
+  .intro__title {
+    margin: 0 0 var(--space-5);
+    font-size: var(--step-4);
+    font-weight: 450;
+    letter-spacing: -0.02em;
+  }
+
+  .intro__question {
+    margin: 0 0 var(--space-5);
+    font-size: var(--step-2);
+    line-height: 1.35;
+    font-style: italic;
+  }
+
+  .intro__text {
+    max-width: var(--measure);
+    margin: 0 0 var(--space-4);
+  }
+
+  .latest__all {
+    margin-top: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .empty {
+    color: var(--color-muted);
+  }
+
+  .papers {
+    margin-top: var(--space-8);
+  }
+</style>
