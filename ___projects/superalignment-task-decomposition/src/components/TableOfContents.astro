@@ -1,0 +1,81 @@
+---
+import type { MarkdownHeading } from 'astro';
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+// Section-level navigation: h2 with nested h3; deeper levels would clutter the list.
+const items = Astro.props.headings
+  .filter((heading) => heading.depth === 2 || heading.depth === 3)
+  .reduce<{ heading: MarkdownHeading; children: MarkdownHeading[] }[]>((list, heading) => {
+    if (heading.depth === 2 || list.length === 0) list.push({ heading, children: [] });
+    else list.at(-1)!.children.push(heading);
+    return list;
+  }, []);
+---
+
+<nav class="toc" aria-labelledby="toc-heading">
+  <h2 id="toc-heading" class="toc__heading">Contents</h2>
+  <ol>
+    {
+      items.map(({ heading, children }) => (
+        <li>
+          <a href={`#${heading.slug}`}>{heading.text}</a>
+          {children.length > 0 && (
+            <ol>
+              {children.map((child) => (
+                <li>
+                  <a href={`#${child.slug}`}>{child.text}</a>
+                </li>
+              ))}
+            </ol>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .toc {
+    padding-block: var(--space-4);
+    border-block: 1px solid var(--color-rule);
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    line-height: 1.45;
+  }
+
+  .toc__heading {
+    margin: 0 0 var(--space-3);
+    font-size: var(--step--2);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  ol {
+    margin: 0;
+    padding-inline-start: 1.4em;
+  }
+
+  ol ol {
+    margin-top: var(--space-1);
+    list-style: lower-alpha;
+  }
+
+  li + li {
+    margin-top: var(--space-1);
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration-color: var(--color-rule-strong);
+  }
+
+  a:hover {
+    color: var(--color-accent);
+    text-decoration-color: currentColor;
+  }
+</style>

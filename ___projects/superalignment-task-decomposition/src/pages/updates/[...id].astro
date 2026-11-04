@@ -1,0 +1,29 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import UpdateLayout from '../../layouts/UpdateLayout.astro';
+import { neighbours } from '../../lib/entries';
+import { getUpdates, type Update } from '../../lib/updates';
+
+export const getStaticPaths = (async () => {
+  // getUpdates() excludes drafts from production builds, so draft routes are never generated.
+  const updates = await getUpdates();
+  return updates.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry, ...neighbours(updates, entry.id) },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  entry: Update;
+  newer?: Update;
+  older?: Update;
+}
+
+const { entry, newer, older } = Astro.props;
+const { Content, headings } = await render(entry);
+---
+
+<UpdateLayout entry={entry} headings={headings} newer={newer} older={older}>
+  <Content />
+</UpdateLayout>

@@ -47,6 +47,25 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      # Project blog: an Astro site in ___projects/superalignment-task-decomposition/
+      # (ignored by Jekyll because the folder name starts with "_"). It is built after Jekyll and
+      # copied into _site so it is served at /superalignment-task-decomposition/.
+      # A failing check, test or build stops the deployment of the whole site.
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ___projects/superalignment-task-decomposition/package-lock.json
+      - name: Build project blog
+        working-directory: ___projects/superalignment-task-decomposition
+        run: |
+          npm ci
+          npm run check
+          npm test
+          npm run build
+      - name: Add project blog to the site
+        run: cp -R ___projects/superalignment-task-decomposition/dist _site/superalignment-task-decomposition
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3

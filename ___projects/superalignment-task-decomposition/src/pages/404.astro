@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EntryList from '../components/EntryList.astro';
+import { getUpdates, url } from '../lib/updates';
+
+const latest = (await getUpdates()).slice(0, 3);
+---
+
+<BaseLayout title="Page not found" description="The requested page could not be found.">
+  <div class="page">
+    <header class="not-found">
+      <h1>Page not found</h1>
+      <p>
+        This address does not lead to a page. It may have been mistyped, or the page may have moved. Try the
+        <a href={url('/')}>homepage</a> or the <a href={url('/updates/')}>list of all updates</a>.
+      </p>
+    </header>
+    {
+      latest.length > 0 && (
+        <section aria-labelledby="recent-heading">
+          <h2 id="recent-heading" class="section-heading">Recent updates</h2>
+          <EntryList entries={latest} />
+        </section>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .not-found {
+    max-width: var(--measure);
+    padding-block: var(--space-8) var(--space-7);
+  }
+
+  h1 {
+    margin: 0 0 var(--space-4);
+    font-size: var(--step-4);
+    font-weight: 450;
+  }
+</style>

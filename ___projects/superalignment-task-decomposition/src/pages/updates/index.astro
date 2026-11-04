@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EntryList from '../../components/EntryList.astro';
+import { groupByMonth } from '../../lib/entries';
+import { getUpdates } from '../../lib/updates';
+
+const updates = await getUpdates();
+const months = groupByMonth(updates);
+---
+
+<BaseLayout title="Updates" description="All research updates, progress notes and articles from the project, newest first.">
+  <div class="page">
+    <header class="archive-header">
+      <h1>Updates</h1>
+      <p>Results, methods, setbacks and explanations, newest first.</p>
+    </header>
+
+    {
+      months.length === 0 ? (
+        <p class="empty">No updates have been published yet.</p>
+      ) : (
+        months.map((month) => (
+          <section class="month" aria-labelledby={`month-${month.key}`}>
+            <h2 id={`month-${month.key}`} class="section-heading">
+              {month.label}
+            </h2>
+            <EntryList entries={month.entries} />
+          </section>
+        ))
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .archive-header {
+    padding-block: var(--space-7) var(--space-6);
+  }
+
+  h1 {
+    margin: 0 0 var(--space-3);
+    font-size: var(--step-4);
+    font-weight: 450;
+    letter-spacing: -0.02em;
+  }
+
+  .archive-header p {
+    margin: 0;
+    color: var(--color-muted);
+  }
+
+  .month + .month {
+    margin-top: var(--space-7);
+  }
+
+  .empty {
+    color: var(--color-muted);
+  }
+</style>

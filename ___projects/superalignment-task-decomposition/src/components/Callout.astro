@@ -1,0 +1,38 @@
+---
+interface Props {
+  /** Short heading, e.g. "Limitation" or "In brief". */
+  title?: string;
+  /** "note" for asides; "caution" for caveats readers should not miss. */
+  kind?: 'note' | 'caution';
+}
+
+const { title, kind = 'note' } = Astro.props;
+---
+
+<div class:list={['callout', `callout--${kind}`]} role="note">
+  {title && <p class="callout__title">{title}</p>}
+  <slot />
+</div>
+
+<style>
+  .callout {
+    padding: var(--space-4) var(--space-5);
+    border-inline-start: 3px solid var(--color-rule-strong);
+    background: var(--color-surface);
+  }
+
+  .callout--caution {
+    border-inline-start-color: var(--color-accent);
+  }
+
+  .callout__title {
+    margin: 0 0 var(--space-2);
+    font-family: var(--font-sans);
+    font-size: var(--step--1);
+    font-weight: 600;
+  }
+
+  .callout > :global(:last-child) {
+    margin-bottom: 0;
+  }
+</style>

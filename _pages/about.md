@@ -32,6 +32,12 @@ Our research focuses on AI alignment and safety issues, exploring how to ensure 
 
 - **[Value Alignment](/projects/value-alignment/)**: Researching methods to ensure AI systems align with human values and preferences.
 
+## Research Logs
+
+Some of our projects keep a research log, where we document results, methods and setbacks as the work develops.
+
+- **[Scalable Oversight by Learning to Decompose Tasks](/superalignment-task-decomposition/)**: Progress updates on training a decomposer policy to split hard tasks into subtasks that weaker models can reliably judge.
+
 ## Join Us
 
 We currently have no open positions available. However, if you are interested in collaborating with our research group, please feel free to send an email to Dr. Florian Mai at fmai@uni-bonn.de.
