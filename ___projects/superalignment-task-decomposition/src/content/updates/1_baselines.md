@@ -1,7 +1,7 @@
 ---
 title: Decomposing difficult tasks is ... difficult
 description: The system in which reasoning LLM decomposes complex tasks into simpler ones for a weaker LLM to implement loses with single zero-shot thinking LLM but wins with zero-shot non-thinking model. This leaves a lot of room for improvement.
-date: 2026-11-03
+date: 2026-11-04
 draft: false
 authors:
   - Łukasz Karwacki
@@ -10,15 +10,13 @@ label: Progress update
 ---
 ![[]](../../assets/updates/1_1.png)
 
-Current forecasts mostly agree *artificial general intelligence* (AGI) will be achieved in this century (with large spread in exact years, although rather sooner than later) and *artificial superintelligence* (ASI) will not be far behind [1]. It is a reasonable to worry that the models will become too complex and too powerful for humans to comprehend and control. Therefore, currently a lot of work in AI alignment science is done to automate the research and develop better monitoring and control techniques over increasingly complex models. One of those directions is called *scalable oversight* [2]. 
-
-In our project we approach this problem by introducing a system of two components: broadly defined strong AI (for our purposes it means a reasoning model) and a weaker component (non-reasoning AI or a human). Our goal is to show that we can train such system in a way that teaches the strong AI to decompose complex tasks into simpler subtasks that can be understood and implemented by the weaker of the two.
+In our <a href="../0_vision/" target="_blank" rel="noopener noreferrer">previous post</a> we have introduced motivation and goals for our project. Now we can move forward and elaborate on the practical setup in which we will answer our questions and show baseline behaviour of our system.
 
 ## Setup
 
-We focus first on coding tasks using [`open-r1/codeforces (verifiable)`](https://huggingface.co/datasets/open-r1/codeforces){:target="_blank" rel="noopener noreferrer"} dataset.
+We focus first on coding tasks using [`open-r1/codeforces (verifiable)`](https://huggingface.co/datasets/open-r1/codeforces) dataset.
 
-In our system we consider, in general, four configurations which have prefix either *Direct*, or *Decomp*:
+In the project we introduce a system of two components: broadly defined strong AI (for our purposes it means a reasoning model) and a weaker component (non-reasoning AI or a human). In practice we consider, in general, four configurations which have prefix either *Direct*, or *Decomp*:
 - Direct-T: direct zero-shot solver with thinking on (T),
 - Direct-F: direct zero-shot solver with thinking off (F),
 - Decomp-TF: a system of decomposer model with thinking on (T) and implementer model with thinking off (F).
@@ -55,13 +53,3 @@ The preliminary results leave a lot of headroom for the decomposing system to le
 ## Next
 
 We perform RLVR training using GRPO on our decomposer/implementer system and see if we can achieve better decompositions than our baselines and analyse failure modes that arise.
-
----
-**References**
-<small>
-
-[1] D. Kokotajlo, S. Alexander, T. Larsen, E. Lifland, R. Dean, <a href="https://ai-2027.com" target="_blank" rel="noopener noreferrer">AI2027</a>, AI Futures Project (2025); T. Larsen, R. Dean, B. Halstead, E. Lifland, R. Greenblatt, D. Kokotajlo, <a href="https://ai-2040.com" target="_blank" rel="noopener noreferrer">AI2040</a>, AI Futures Project (2026); B. Todd, <a href="https://80000hours.org/ai/guide/when-will-agi-arrive" target="_blank" rel="noopener noreferrer">Will we have AGI by 2030?</a>, 80.000 hours (2026).
-
-[2] P. Christiano, B. Shlegeris, D. Amodei, <a href="https://arxiv.org/abs/1810.08575" target="_blank" rel="noopener noreferrer">Supervising Strong Learners by Amplifying Weak Experts</a>, arXiv:1810.08575 (2018).
-
-</small>
