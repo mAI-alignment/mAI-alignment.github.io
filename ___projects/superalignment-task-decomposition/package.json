@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro",
-    "test": "TZ=America/Los_Angeles node --test tests/",
+    "test": "TZ=America/Los_Angeles node --test tests/*.test.ts",
     "validate": "npm run check && npm test && npm run build"
   },
   "dependencies": {
